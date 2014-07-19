@@ -89,4 +89,19 @@ weapons at most)
 and its upgrades. Players must use this carefully though – some may have
 AOEs that would harm normal people as well
 
+* A Little Background on the Story
+(Tentative)
+
+ - The Main Character’s mother died in an
+accident due to a strong, bright flash of
+the camera of a person taking a selfie
+on a very inappropriate place. He swore
+revenge and wrath upon all Selfie-whores
+who are not in place – But his madness
+just made things worse, leading him to the
+idea that he must kill this so-called “Selfie
+lord” that he claims on his own.
+Join his madness as he massacres and
+rages through places in Metro Manila just
+
 
