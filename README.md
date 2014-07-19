@@ -16,5 +16,9 @@ Selfie Killer WINPROG 2014-2015
   - Miguel Laroza          [Programming]
   - Jan Joseph Hernandez   [User Interface]
   - Jhunel Adam Dela       [Sound Artist]
-  - Meris Soneja           [Programming/Game Art]
+  - Meris Soneja           [Programming/Game Art]*
   
+
+  
+* GAme Genre
+* asjdbahjsdkjasd
