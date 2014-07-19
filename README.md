@@ -19,6 +19,7 @@ Selfie Killer WINPROG 2014-2015
   - Meris Soneja           [Programming/Game Art]*
   
 
-  
-* GAme Genre
-* asjdbahjsdkjasd
+
+
+* Game Genre
+  - a sort of violent Side-Scrolling, Hack and Slash.
