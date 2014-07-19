@@ -7,7 +7,7 @@ Selfie Killer WINPROG 2014-2015
 #####Group Name: Unfinished Play 
        
 * Members
-  - John Jovit J.San Juan
+  - John Jovit J.San Juan [Game Designer]
   - Mark William San Juan
   - Karl Wendell Rodriguez
   - Joash Fernandez
