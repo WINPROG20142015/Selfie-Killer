@@ -51,3 +51,42 @@ the stage (going right) until he reaches his destination.
   - If you hit a normal person or miss a selfie-whore – MC’s [3]
 FPS(Speed) and [4]Battery(Health) will decrease .
 
+* Game Features
+ 3 Stages: Rizal Park / Megamall / Araneta Coliseum
+
+
+
+ * Win State: complete rounds w/out your battery going to 0%
+
+
+
+  - [1] S.Goals: complete sub tasks to gain more upgrade points (ex:
+don’t miss one selfie-whore) and etc.
+
+
+
+  - [2] Upgrade System: upgrading MC’s weapons will help with
+his weapon’s range – giving him [5]skills at times too. After every stage he
+gets upgrade points – depending on his performance.
+
+
+
+
+
+  - [3] FPS – MC’s performance in dealing with blockades will determine
+his FPS. The faster the FPS – more points and better experience
+
+
+
+  - [4] Upgrade System – Not only will he have different
+weapons, he can also upgrade them as well. But since we are uncertain of
+our programming capacity, there can only be 2 upgrades per weapons. (4
+weapons at most)
+
+
+
+  - [5] Skills – The MC will also gain skills depending on his weapon
+and its upgrades. Players must use this carefully though – some may have
+AOEs that would harm normal people as well
+
+
