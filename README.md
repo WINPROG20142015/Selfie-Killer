@@ -21,5 +21,15 @@ Selfie Killer WINPROG 2014-2015
 
 
 
+
 * Game Genre
   - a sort of violent Side-Scrolling, Hack and Slash.
+
+
+* Game Description
+  - There’s nothing wrong with taking a selfie--- not unless you’re
+doing it someplace unreasonable and you tend to block other
+people’s way just because of your vanity. Well, experience
+the sensation of obliterating all the selfie-whores in your way
+with our Selfie Killer game! Where timing is the key to getting
+to your goals
