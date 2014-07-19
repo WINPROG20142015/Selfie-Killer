@@ -36,10 +36,10 @@ to your goals
 
 
 * Gameplay
- Controls: <A> and <D> keys
+ Controls: A and D keys
 
-  - Press '<A>' to avoid '<D>' to slash/hit/destroy
-
+  - Press A to avoid D to slash/hit/destroy
+  - 
   - The main character(MC) will continuously walk to the end of
 the stage (going right) until he reaches his destination.
 
@@ -48,6 +48,6 @@ the stage (going right) until he reaches his destination.
 
   - Avoid normal people : Destroy selfie whores.
 
-•If you hit a normal person or miss a selfie-whore – MC’s [3]
+  - If you hit a normal person or miss a selfie-whore – MC’s [3]
 FPS(Speed) and [4]Battery(Health) will decrease .
 
