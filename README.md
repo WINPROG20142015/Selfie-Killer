@@ -36,10 +36,10 @@ to your goals
 
 
 * Gameplay
- Controls: A and D keys
+ - Controls: A and D keys
 
   - Press A to avoid D to slash/hit/destroy
-  - 
+ 
   - The main character(MC) will continuously walk to the end of
 the stage (going right) until he reaches his destination.
 
