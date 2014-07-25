@@ -1,0 +1,2 @@
+c:\users\rhem\documents\visual studio 2012\Projects\SelfieKiller\SelfieKiller\SelfieKillerContent\obj\x86\Debug\SelfieKillerContent.contentprojResolveAssemblyReference.cache
+C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\SelfieKiller\SelfieKiller\SelfieKillerContent\obj\x86\Debug\SelfieKillerContent.contentprojResolveAssemblyReference.cache
