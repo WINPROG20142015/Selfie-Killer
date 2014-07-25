@@ -28,7 +28,8 @@ namespace SelfieKiller
         Texture2D charAvoid;
         Texture2D charAttack;
         // Set the coordinates to draw the sprite at.
-        Vector2 spritePosition = new Vector2(0, 50);
+        Vector2 spritePosition = new Vector2(10, 200);
+        Vector2 spritePosition2 = new Vector2(10, 170);
         //BOOLEANS
 
         #endregion
@@ -124,7 +125,7 @@ namespace SelfieKiller
             else if (currentKeyboardState.IsKeyDown(Keys.D) && !currentKeyboardState.IsKeyDown(Keys.A))
             {
                 spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-                spriteBatch.Draw(charAttack, spritePosition, Color.White);
+                spriteBatch.Draw(charAttack, spritePosition2, Color.White);
                 spriteBatch.End();
             }
 
