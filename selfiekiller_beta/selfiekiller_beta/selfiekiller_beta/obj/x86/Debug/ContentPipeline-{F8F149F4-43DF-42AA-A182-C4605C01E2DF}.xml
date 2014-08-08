@@ -2,22 +2,22 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Sprites\Idle.png</Source>
-      <Name>Sprites\Idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\Idle.xnb</Output>
-      <Time>2014-08-08T22:39:33.1936796+08:00</Time>
-    </Item>
-    <Item>
       <Source>Fonts\menuFont.spritefont</Source>
       <Name>Fonts\menuFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Fonts\menuFont.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Fonts\menuFont.xnb</Output>
       <Time>2014-07-19T13:40:35.4915909+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Backgrounds\Background0_0.jpg</Source>
+      <Name>Backgrounds\Background0_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background0_0.xnb</Output>
+      <Time>2014-08-08T04:02:22.5789446+08:00</Time>
     </Item>
     <Item>
       <Source>splash.png</Source>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\splash.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\splash.xnb</Output>
       <Time>2014-08-08T04:08:08.6399022+08:00</Time>
     </Item>
     <Item>
@@ -34,17 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\menubeta.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\menubeta.xnb</Output>
       <Time>2014-08-08T04:20:36.1357558+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Backgrounds\Background0_0.jpg</Source>
-      <Name>Backgrounds\Background0_0</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background0_0.xnb</Output>
-      <Time>2014-08-08T04:02:22.5789446+08:00</Time>
     </Item>
     <Item>
       <Source>Backgrounds\wew.png</Source>
@@ -52,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\wew.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\wew.xnb</Output>
       <Time>2014-08-08T04:31:18.5641685+08:00</Time>
     </Item>
     <Item>
@@ -61,17 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background1_0.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background1_0.xnb</Output>
       <Time>2014-08-08T04:31:18.5671705+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Backgrounds\Background2_0.png</Source>
-      <Name>Backgrounds\Background2_0</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background2_0.xnb</Output>
-      <Time>2014-08-08T23:56:51.2134019+08:00</Time>
     </Item>
     <Item>
       <Source>Sprites\attack.png</Source>
@@ -79,8 +61,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\attack.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\attack.xnb</Output>
       <Time>2014-08-08T23:21:47.5299086+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Idle.png</Source>
+      <Name>Sprites\Idle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\Idle.xnb</Output>
+      <Time>2014-08-08T22:39:33.1936796+08:00</Time>
     </Item>
     <Item>
       <Source>Spacer.png</Source>
@@ -88,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Spacer.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Spacer.xnb</Output>
       <Time>2014-08-08T22:55:43.7104886+08:00</Time>
     </Item>
     <Item>
@@ -97,8 +88,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\floor.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\floor.xnb</Output>
       <Time>2014-08-08T23:39:10.3980478+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Backgrounds\Background2_0.png</Source>
+      <Name>Backgrounds\Background2_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background2_0.xnb</Output>
+      <Time>2014-08-08T23:56:51.2134019+08:00</Time>
     </Item>
     <Item>
       <Source>Sprites\avoid.png</Source>
@@ -106,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\avoid.xnb</Output>
+      <Output>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\avoid.xnb</Output>
       <Time>2014-08-08T23:58:53.1693261+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -116,10 +116,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Rhem\Downloads\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
