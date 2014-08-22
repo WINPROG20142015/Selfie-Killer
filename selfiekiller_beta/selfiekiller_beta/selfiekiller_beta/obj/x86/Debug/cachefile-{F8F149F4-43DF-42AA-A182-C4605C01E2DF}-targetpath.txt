@@ -8,5 +8,8 @@ Content\Sprites\attack.xnb
 Content\Sprites\Idle.xnb
 Content\Spacer.xnb
 Content\floor.xnb
-Content\Backgrounds\Background2_0.xnb
 Content\Sprites\avoid.xnb
+Content\playbutton.xnb
+Content\menu.xnb
+Content\Backgrounds\Background2_0.xnb
+Content\jeje.xnb

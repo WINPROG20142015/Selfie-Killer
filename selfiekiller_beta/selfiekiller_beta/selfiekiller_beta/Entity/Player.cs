@@ -13,10 +13,19 @@ namespace selfiekiller_beta
     public class Player
     {
 
-        KeyboardState currentKeyboardState;
+        KeyboardState presentKey;
+        KeyboardState pastKey;
         public Animation attackAnimation;
         public Animation idleAnimation;
         public Animation avoidAnimation;
+
+        //int counter = 1;
+        //int limit = 50;
+        //float countDuration = 2f; //every  2s.
+        //float currentTime = 0f;
+
+        public bool isAvoid;
+        public bool isDestroy;
 
         private AnimationPlayer sprite;
 
@@ -51,9 +60,9 @@ namespace selfiekiller_beta
 
         public void LoadContent()
         {
-            attackAnimation = new Animation(content.Load<Texture2D>("Sprites/attack"), 0.1f, true);
+            attackAnimation = new Animation(content.Load<Texture2D>("Sprites/Attack"), 0.1f, false);
             idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle"), 0.1f, true);
-            avoidAnimation = new Animation(content.Load<Texture2D>("Sprites/avoid"), 0.1f, true);
+            avoidAnimation = new Animation(content.Load<Texture2D>("Sprites/Avoid"), 0.1f, false);
         }
 
         public void Reset(Vector2 position)
@@ -64,29 +73,32 @@ namespace selfiekiller_beta
 
         public void Update(GameTime gameTime)
         {
-            currentKeyboardState = Keyboard.GetState();
+            //PlayerKeysUp();
+            PlayerKeysDown(gameTime);
+        }
 
-            if (currentKeyboardState.IsKeyDown(Keys.A) && !currentKeyboardState.IsKeyDown(Keys.D))
-            {
-                sprite.PlayAnimation(avoidAnimation);
-                Trace.WriteLine("Avoid");
-            }
-    
-            if (currentKeyboardState.IsKeyDown(Keys.D) && !currentKeyboardState.IsKeyDown(Keys.A))
+        public void PlayerKeysDown(GameTime gameTime)
+        {
+            presentKey = Keyboard.GetState();
+
+
+            if (presentKey.IsKeyDown(Keys.D) && pastKey.IsKeyUp(Keys.D))
             {
                 sprite.PlayAnimation(attackAnimation);
                 Trace.WriteLine("Destroy");
             }
-            if (currentKeyboardState.IsKeyDown(Keys.D) && currentKeyboardState.IsKeyDown(Keys.A))
+            else if (presentKey.IsKeyDown(Keys.A) && pastKey.IsKeyUp(Keys.A))
+            {
+                sprite.PlayAnimation(avoidAnimation);
+                Trace.WriteLine("Avoid");
+            }
+            else 
             {
                 sprite.PlayAnimation(idleAnimation);
-                Trace.WriteLine("Pressing Both");
+                Trace.WriteLine("Idle");
             }
-            else if (!currentKeyboardState.IsKeyDown(Keys.D) && !currentKeyboardState.IsKeyDown(Keys.A))
-            {
-                sprite.PlayAnimation(idleAnimation);
-                Trace.WriteLine("IDLE");
-            }
+
+            pastKey = presentKey;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)

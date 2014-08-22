@@ -82,13 +82,14 @@ namespace selfiekiller_beta
         /// <summary>
         /// Initialize the spriteBatch and screen dedicated content.
         /// </summary>
+        
         protected override void LoadContent()
         {
             ContentManager content = Game.Content;
 
-            texture = content.Load<Texture2D>("menubeta");
+            texture = content.Load<Texture2D>("menu");
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+           
             //load screen dedicated content
             foreach (GameScreen screen in screens)
                 screen.LoadContent();
@@ -174,6 +175,7 @@ namespace selfiekiller_beta
         /// <param name="gameTime">Time object to pass to the screens</param>
         public override void Draw(GameTime gameTime)
         {
+
             foreach (GameScreen screen in screens)
             {
                 //Tells the current screen to draw if its not hidden

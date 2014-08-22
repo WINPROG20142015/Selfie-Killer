@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
 
 namespace selfiekiller_beta
 {
 
     public abstract class MenuScreen : GameScreen
     {
+        //Button btnPlay;
+
         #region Fields and Properties
         InputSystem input;
         /// <summary>
@@ -192,6 +196,9 @@ namespace selfiekiller_beta
         //Updates the menu items position based on transition
         public override void Update(GameTime gameTime, bool covered)
         {
+           MouseState mouse = Mouse.GetState();
+           //if (btnPlay.isCliked == true) Trace.WriteLine("CLICKED");
+           //btnPlay.Update(mouse);
             //We want base.Update to come before our actual logic so the transition updates.
             base.Update(gameTime, covered);
             for (int i = 0; i < menuEntries.Count; i++)
@@ -209,18 +216,19 @@ namespace selfiekiller_beta
 
             Vector2 menuPosition = new Vector2(position.X, position.Y);
             spriteBatch.Begin();
+
             if (ScreenManager.wallpaper != null)
-                spriteBatch.Draw(ScreenManager.wallpaper, new Rectangle(0, 0, 1280, 720), Color.White);
-            //if (backgroundTexture != null)
-            //    spriteBatch.Draw(backgroundTexture, backgroundPosition, Color.White);
+                spriteBatch.Draw(ScreenManager.wallpaper, new Rectangle(0, 0, 800, 600), Color.White);
+
+
             for (int i = 0; i < menuEntries.Count; i++)
             {
                 bool isSelected = (i == selectedEntry);
-                //DrawEntry(spriteBatch, gameTime, menuEntries[i], menuPosition, isSelected);
                 menuEntries[i].Draw(gameTime, isSelected);
                 menuPosition.Y += spriteFont.LineSpacing;
             }
             spriteBatch.End();
+
         }
         #endregion
     }

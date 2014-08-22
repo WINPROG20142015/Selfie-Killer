@@ -22,7 +22,7 @@ namespace selfiekiller_beta
             this.graphics = graphics;
             this.content = content;
 
-            newGame = new MenuEntry(this, "New Game");
+            newGame = new MenuEntry(this, "Start Game");
             quit = new MenuEntry(this, "Quit");
 
             Selected = Color.Red;
@@ -32,10 +32,10 @@ namespace selfiekiller_beta
         }
         public override void Initialize()
         {
-            //int newGameX = graphics.GraphicsDevice.Viewport.Width / 2;
-            //int newGameY = graphics.GraphicsDevice.Viewport.Height / 2;
-            int newGameX = 100;
-            int newGameY = 100;
+            int newGameX = graphics.GraphicsDevice.Viewport.Width - 500;
+            int newGameY = graphics.GraphicsDevice.Viewport.Height / 2;
+            //int newGameX = 100;
+            //int newGameY = 100;
             newGame.SetPosition(new Vector2(newGameX, newGameY), true);
             newGame.Selected += new EventHandler(newGame_Selected);
 
