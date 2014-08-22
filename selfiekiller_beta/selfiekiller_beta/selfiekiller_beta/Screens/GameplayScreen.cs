@@ -11,13 +11,25 @@ namespace selfiekiller_beta
 {
     public class GameplayScreen : GameScreen
     {
-
+      
         //GraphicsDeviceManager graphics;
+        GraphicsDevice graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
         Background[] backgrounds;
 
         Player player;
+
+        //Timeline
+        Texture2D timeLineTexture;
+        Texture2D timeLineBorder;
+        Rectangle timeLineRectangle;
+        Vector2 borderPos = new Vector2(500f,10f);
+        int timeLinedec;
+
+        //Health
+        int s_onePlayerHealth;
+        Texture2D[] arrayHealth = new Texture2D[5];
 
         TimeSpan time = TimeSpan.Zero;
 
@@ -28,11 +40,17 @@ namespace selfiekiller_beta
         Random random = new Random();
         //new code
 
+        //timer
+        int counter = 1;
+        int limit = 1;
+        float countDuration = .3f; //every  2s.
+        float currentTime = 0f;
+
+
         public GameplayScreen(ContentManager content)
         {
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
-
             this.content = content;
         }
 
@@ -45,14 +63,25 @@ namespace selfiekiller_beta
             backgrounds[1] = new Background(content, "Backgrounds/Background1", 0.5f);
             backgrounds[2] = new Background(content, "Backgrounds/Background2", 0.8f);
             //player
-            player = new Player(new Vector2(150.0f, 500.0f), ScreenManager, content);
-            
+            player = new Player(new Vector2(180.0f, 500.0f), ScreenManager, content);
+
+            //timeline
+            timeLineTexture = content.Load<Texture2D>("floor");
+            timeLineBorder = content.Load<Texture2D>("ProgressBar");
+
+            //healtj
+            arrayHealth[0] = content.Load<Texture2D>("Battery/bat1");
+            arrayHealth[1] = content.Load<Texture2D>("Battery/bat2");
+            arrayHealth[2] = content.Load<Texture2D>("Battery/bat3");
+            arrayHealth[3] = content.Load<Texture2D>("Battery/bat4");
+            arrayHealth[4] = content.Load<Texture2D>("Battery/bat5");
         }
 
         public override void UnloadContent()
         {
             content.Unload();
         }
+
         float spawn = 0;
         public override void Update(GameTime gameTime, bool covered)
         {
@@ -61,10 +90,31 @@ namespace selfiekiller_beta
             time += gameTime.ElapsedGameTime;
             player.Update(gameTime);
 
-            spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //foreach (Enemies enemy in enemies)
-                //enemy.Update(graphics);
+            currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+            //enemies
+            spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            foreach (Enemies enemy in enemies)
+                enemy.Update(graphics);
+            LoadEnemies();
+
+            //timeline
+                if (currentTime >= countDuration)
+                {
+                    counter++;
+                    currentTime -= countDuration;
+                }
+                if (counter >= limit && timeLinedec <= 265)
+                {
+                    counter = 0;
+                    timeLinedec += 2;
+                    //s_onePlayerHealth++;
+                }
+                s_onePlayerHealth = 4;
+                
+            
+            //timeline
+            timeLineRectangle = new Rectangle(505, 15, timeLinedec, 20);
 
             LoadEnemies();
             base.Update(gameTime, false);
@@ -102,9 +152,28 @@ namespace selfiekiller_beta
                 backgrounds[i].Draw(spriteBatch, cameraPosition);
 
             }
+            //enemysprite
             foreach (Enemies enemy in enemies)
                 enemy.Draw(spriteBatch);
+            //player
             player.Draw(gameTime, spriteBatch);
+            spriteBatch.Draw(timeLineTexture,timeLineRectangle,Color.White);
+            spriteBatch.Draw(timeLineBorder, borderPos, Color.White);
+
+            switch (s_onePlayerHealth) 
+            {
+                case 0: spriteBatch.Draw(arrayHealth[4], new Vector2(0f, 0f), Color.White);
+                    break;
+                case 1: spriteBatch.Draw(arrayHealth[3], new Vector2(0f, 0f), Color.White);
+                    break;
+                case 2: spriteBatch.Draw(arrayHealth[2], new Vector2(0f, 0f), Color.White);
+                    break;
+                case 3: spriteBatch.Draw(arrayHealth[1], new Vector2(0f, 0f), Color.White);
+                    break;
+                case 4: spriteBatch.Draw(arrayHealth[0], new Vector2(0f, 0f), Color.White);
+                    break;
+
+            }
             spriteBatch.End();
         }
     }

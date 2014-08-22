@@ -47,15 +47,6 @@
       <Time>2014-08-08T04:31:18.5641685+08:00</Time>
     </Item>
     <Item>
-      <Source>Backgrounds\Background1_0.png</Source>
-      <Name>Backgrounds\Background1_0</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background1_0.xnb</Output>
-      <Time>2014-08-08T04:31:18.5671705+08:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\attack.png</Source>
       <Name>Sprites\attack</Name>
       <Importer>TextureImporter</Importer>
@@ -135,6 +126,78 @@
       <Options>None</Options>
       <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\jeje.xnb</Output>
       <Time>2014-08-22T13:30:54.9610695+08:00</Time>
+    </Item>
+    <Item>
+      <Source>ProgressBar.png</Source>
+      <Name>ProgressBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\ProgressBar.xnb</Output>
+      <Time>2014-08-22T19:35:04.561044+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battery\bat1.png</Source>
+      <Name>Battery\bat1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat1.xnb</Output>
+      <Time>2014-08-22T20:20:29.8043754+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battery\bat2.png</Source>
+      <Name>Battery\bat2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat2.xnb</Output>
+      <Time>2014-08-22T20:20:29.8063768+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battery\bat3.png</Source>
+      <Name>Battery\bat3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat3.xnb</Output>
+      <Time>2014-08-22T20:20:29.8073774+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battery\bat4.png</Source>
+      <Name>Battery\bat4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat4.xnb</Output>
+      <Time>2014-08-22T20:20:29.8093809+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Battery\bat5.png</Source>
+      <Name>Battery\bat5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat5.xnb</Output>
+      <Time>2014-08-22T20:20:29.8033748+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\idle3.png</Source>
+      <Name>Sprites\idle3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\idle3.xnb</Output>
+      <Time>2014-08-22T20:36:35.8638863+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Backgrounds\Background1_0.png</Source>
+      <Name>Backgrounds\Background1_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background1_0.xnb</Output>
+      <Time>2014-08-22T21:23:06.4707348+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

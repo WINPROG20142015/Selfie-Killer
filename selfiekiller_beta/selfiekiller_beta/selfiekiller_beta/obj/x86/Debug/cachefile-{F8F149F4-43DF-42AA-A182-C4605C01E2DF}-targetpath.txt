@@ -3,7 +3,6 @@ Content\Backgrounds\Background0_0.xnb
 Content\splash.xnb
 Content\menubeta.xnb
 Content\Backgrounds\wew.xnb
-Content\Backgrounds\Background1_0.xnb
 Content\Sprites\attack.xnb
 Content\Sprites\Idle.xnb
 Content\Spacer.xnb
@@ -13,3 +12,11 @@ Content\playbutton.xnb
 Content\menu.xnb
 Content\Backgrounds\Background2_0.xnb
 Content\jeje.xnb
+Content\ProgressBar.xnb
+Content\Battery\bat1.xnb
+Content\Battery\bat2.xnb
+Content\Battery\bat3.xnb
+Content\Battery\bat4.xnb
+Content\Battery\bat5.xnb
+Content\Sprites\idle3.xnb
+Content\Backgrounds\Background1_0.xnb

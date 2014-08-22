@@ -18,12 +18,9 @@ namespace selfiekiller_beta
         public Animation attackAnimation;
         public Animation idleAnimation;
         public Animation avoidAnimation;
+        public string mCurrentState;
 
-        //int counter = 1;
-        //int limit = 50;
-        //float countDuration = 2f; //every  2s.
-        //float currentTime = 0f;
-
+        public bool timerEnabled = false;
         public bool isAvoid;
         public bool isDestroy;
 
@@ -43,6 +40,22 @@ namespace selfiekiller_beta
         }
         Vector2 position;
 
+        //collision
+        public Rectangle localRect;
+
+        public Rectangle BoundingRect
+        {
+            get
+            {
+                int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + (int)idleAnimation.Texture.Bounds.Y;
+                int left = (int)Math.Round(Position.X - sprite.Origin.X) + (int)sprite.Origin.X;
+                return new Rectangle(left, top,
+                    localRect.Width,
+                    localRect.Height);
+            }
+        }
+
+
         ScreenManager screenManager;
         ContentManager content;
 
@@ -61,8 +74,13 @@ namespace selfiekiller_beta
         public void LoadContent()
         {
             attackAnimation = new Animation(content.Load<Texture2D>("Sprites/Attack"), 0.1f, false);
-            idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle"), 0.1f, true);
+            idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle3"), 0.1f, true);
             avoidAnimation = new Animation(content.Load<Texture2D>("Sprites/Avoid"), 0.1f, false);
+
+            /*localRect = new Rectangle(runAnimation.Texture.Bounds.X,
+            runAnimation.Texture.Bounds.Y,
+            runAnimation.FrameWidth,
+            runAnimation.FrameHeight);*/
         }
 
         public void Reset(Vector2 position)
@@ -73,29 +91,49 @@ namespace selfiekiller_beta
 
         public void Update(GameTime gameTime)
         {
-            //PlayerKeysUp();
-            PlayerKeysDown(gameTime);
+            PlayerKeysDown(gameTime);    
         }
 
         public void PlayerKeysDown(GameTime gameTime)
         {
             presentKey = Keyboard.GetState();
 
+            
 
             if (presentKey.IsKeyDown(Keys.D) && pastKey.IsKeyUp(Keys.D))
             {
-                sprite.PlayAnimation(attackAnimation);
-                Trace.WriteLine("Destroy");
+                mCurrentState = "Destroying";
             }
-            else if (presentKey.IsKeyDown(Keys.A) && pastKey.IsKeyUp(Keys.A))
+
+            if (presentKey.IsKeyDown(Keys.A) && pastKey.IsKeyUp(Keys.A))
             {
-                sprite.PlayAnimation(avoidAnimation);
-                Trace.WriteLine("Avoid");
+                mCurrentState = "Avoiding"; 
             }
-            else 
-            {
-                sprite.PlayAnimation(idleAnimation);
-                Trace.WriteLine("Idle");
+            //-----------------------------------------------------------------------
+
+            switch (mCurrentState) 
+            { 
+                case "Walking":
+                    sprite.PlayAnimation(idleAnimation);
+                    break;
+                case "Destroying":
+                    isDestroy = true;
+                    if (isDestroy)
+                    {
+                        sprite.PlayAnimation(attackAnimation);
+                        Trace.WriteLine("Destroy");
+                       mCurrentState = "Walking";
+                    }
+                    break;
+                case "Avoiding":
+                    isAvoid = true;
+                    if (isAvoid)
+                    {
+                        sprite.PlayAnimation(avoidAnimation);
+                        Trace.WriteLine("Avoid");
+                        mCurrentState = "Walking";
+                    }
+                    break;
             }
 
             pastKey = presentKey;

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -21,15 +22,20 @@ namespace selfiekiller_beta
             position = newPosition;
         }
 
-        public void Update(GraphicsDevice grapgics)
+        //new code to
+        public void Update(GraphicsDevice graphics)
         {
+            position += velocity;
             if (position.X < 0 - texture.Width)
+
                 isVisible = false;
         }
+        //new code to
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, Color.White);
+
         }
     }
 }
