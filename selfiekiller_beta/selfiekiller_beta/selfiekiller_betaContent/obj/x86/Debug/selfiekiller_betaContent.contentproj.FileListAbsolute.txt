@@ -1,3 +1,4 @@
 C:\Users\Rhem\Downloads\Documents\Visual Studio 2012\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Rhem\Desktop\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
+C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache

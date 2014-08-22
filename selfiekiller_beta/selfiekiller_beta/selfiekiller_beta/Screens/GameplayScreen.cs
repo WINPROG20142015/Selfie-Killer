@@ -5,14 +5,13 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using System.Diagnostics;
 
 
 namespace selfiekiller_beta
 {
     public class GameplayScreen : GameScreen
     {
-      
-        //GraphicsDeviceManager graphics;
         GraphicsDevice graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
@@ -31,19 +30,28 @@ namespace selfiekiller_beta
         int s_onePlayerHealth;
         Texture2D[] arrayHealth = new Texture2D[5];
 
+        //collision
+        public Color spriteColor;
+
         TimeSpan time = TimeSpan.Zero;
 
         float cameraPosition = 0;
 
-        //new code
+        //enemies
         List<Enemies> enemies = new List<Enemies>();
         Random random = new Random();
-        //new code
+        Rectangle enRect;
+
+
+        //flags
+        Texture2D clearFlag;
+        Rectangle flagRect;
+        Rectangle TempRect;
 
         //timer
         int counter = 1;
         int limit = 1;
-        float countDuration = .3f; //every  2s.
+        float countDuration = .01f; //every  2s.
         float currentTime = 0f;
 
 
@@ -69,12 +77,17 @@ namespace selfiekiller_beta
             timeLineTexture = content.Load<Texture2D>("floor");
             timeLineBorder = content.Load<Texture2D>("ProgressBar");
 
-            //healtj
+            //health
             arrayHealth[0] = content.Load<Texture2D>("Battery/bat1");
             arrayHealth[1] = content.Load<Texture2D>("Battery/bat2");
             arrayHealth[2] = content.Load<Texture2D>("Battery/bat3");
             arrayHealth[3] = content.Load<Texture2D>("Battery/bat4");
             arrayHealth[4] = content.Load<Texture2D>("Battery/bat5");
+
+            //flag
+            clearFlag = content.Load<Texture2D>("flags/flag1");
+            flagRect = new Rectangle(1000, 240,clearFlag.Width,clearFlag.Height);
+            TempRect = new Rectangle(10, 240, 100, 100);
         }
 
         public override void UnloadContent()
@@ -110,17 +123,43 @@ namespace selfiekiller_beta
                     timeLinedec += 2;
                     //s_onePlayerHealth++;
                 }
+                if (timeLinedec >= 250)
+                {
+                    flagRect.X -= 5;
+                }
                 s_onePlayerHealth = 4;
                 
             
             //timeline
             timeLineRectangle = new Rectangle(505, 15, timeLinedec, 20);
 
+            //collision
+            HandleCollision();
+
             LoadEnemies();
             base.Update(gameTime, false);
 
         }
+        public void HandleCollision()
+        {
+            if (TempRect.Intersects(flagRect))
+            {
+                player.spriteColor = Color.Blue;
+                Trace.WriteLine("Intersecting");
 
+            }
+            else if (TempRect.Intersects(enRect))
+            {
+                player.spriteColor = Color.Red;
+                Trace.WriteLine("Intersecting");
+            }
+            else
+            {
+                player.spriteColor = Color.White;
+            }
+        }
+
+        
         public void LoadEnemies()
         {
             if (spawn >= 1)
@@ -128,7 +167,7 @@ namespace selfiekiller_beta
                 spawn = 0;
                 if (enemies.Count() < 1)
                 {
-                    enemies.Add(new Enemies(content.Load<Texture2D>("jeje"), new Vector2(1100f, 360f)));
+                    enemies.Add(new Enemies(content.Load<Texture2D>("jeje"), new Vector2(1100f, 360f),enRect));
                 }
             }
 
@@ -146,20 +185,23 @@ namespace selfiekiller_beta
             Rectangle fullscreen = new Rectangle(0, 0, viewport.Width, viewport.Height);
             byte fade = ScreenAlpha;
 
+
             spriteBatch.Begin();
+            
             for (int i = 0; i <= 2; ++i)
             {
                 backgrounds[i].Draw(spriteBatch, cameraPosition);
 
             }
             //enemysprite
+            spriteBatch.Draw(clearFlag, flagRect, Color.White);
             foreach (Enemies enemy in enemies)
                 enemy.Draw(spriteBatch);
             //player
             player.Draw(gameTime, spriteBatch);
             spriteBatch.Draw(timeLineTexture,timeLineRectangle,Color.White);
             spriteBatch.Draw(timeLineBorder, borderPos, Color.White);
-
+            
             switch (s_onePlayerHealth) 
             {
                 case 0: spriteBatch.Draw(arrayHealth[4], new Vector2(0f, 0f), Color.White);
@@ -175,6 +217,7 @@ namespace selfiekiller_beta
 
             }
             spriteBatch.End();
+
         }
     }
 }

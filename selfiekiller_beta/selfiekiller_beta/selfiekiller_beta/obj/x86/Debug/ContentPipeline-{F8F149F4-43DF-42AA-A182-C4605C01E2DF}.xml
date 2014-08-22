@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Fonts\menuFont.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Fonts\menuFont.xnb</Output>
       <Time>2014-07-19T13:40:35.4915909+08:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background0_0.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background0_0.xnb</Output>
       <Time>2014-08-08T04:02:22.5789446+08:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\splash.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\splash.xnb</Output>
       <Time>2014-08-08T04:08:08.6399022+08:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\menubeta.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\menubeta.xnb</Output>
       <Time>2014-08-08T04:20:36.1357558+08:00</Time>
     </Item>
     <Item>
@@ -43,26 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\wew.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\wew.xnb</Output>
       <Time>2014-08-08T04:31:18.5641685+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\attack.png</Source>
-      <Name>Sprites\attack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\attack.xnb</Output>
-      <Time>2014-08-22T14:18:13.2344336+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\Idle.png</Source>
-      <Name>Sprites\Idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\Idle.xnb</Output>
-      <Time>2014-08-22T15:02:28.9856993+08:00</Time>
     </Item>
     <Item>
       <Source>Spacer.png</Source>
@@ -70,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Spacer.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Spacer.xnb</Output>
       <Time>2014-08-08T22:55:43.7104886+08:00</Time>
     </Item>
     <Item>
@@ -79,17 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\floor.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\floor.xnb</Output>
       <Time>2014-08-08T23:39:10.3980478+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\avoid.png</Source>
-      <Name>Sprites\avoid</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\avoid.xnb</Output>
-      <Time>2014-08-22T14:28:29.2114495+08:00</Time>
     </Item>
     <Item>
       <Source>playbutton.jpg</Source>
@@ -97,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\playbutton.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\playbutton.xnb</Output>
       <Time>2014-08-21T21:53:54.1987798+08:00</Time>
     </Item>
     <Item>
@@ -106,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\menu.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\menu.xnb</Output>
       <Time>2014-08-21T22:13:25.843943+08:00</Time>
     </Item>
     <Item>
@@ -115,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background2_0.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background2_0.xnb</Output>
       <Time>2014-08-22T12:37:56.0539791+08:00</Time>
     </Item>
     <Item>
@@ -124,8 +97,35 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\jeje.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\jeje.xnb</Output>
       <Time>2014-08-22T13:30:54.9610695+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Attack.png</Source>
+      <Name>Sprites\Attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\Attack.xnb</Output>
+      <Time>2014-08-22T14:18:13.2344336+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Avoid.png</Source>
+      <Name>Sprites\Avoid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\Avoid.xnb</Output>
+      <Time>2014-08-22T14:28:29.2114495+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Idle.png</Source>
+      <Name>Sprites\Idle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\Idle.xnb</Output>
+      <Time>2014-08-22T15:02:28.9856993+08:00</Time>
     </Item>
     <Item>
       <Source>ProgressBar.png</Source>
@@ -133,7 +133,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\ProgressBar.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\ProgressBar.xnb</Output>
       <Time>2014-08-22T19:35:04.561044+08:00</Time>
     </Item>
     <Item>
@@ -142,7 +142,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat1.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat1.xnb</Output>
       <Time>2014-08-22T20:20:29.8043754+08:00</Time>
     </Item>
     <Item>
@@ -151,7 +151,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat2.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat2.xnb</Output>
       <Time>2014-08-22T20:20:29.8063768+08:00</Time>
     </Item>
     <Item>
@@ -160,7 +160,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat3.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat3.xnb</Output>
       <Time>2014-08-22T20:20:29.8073774+08:00</Time>
     </Item>
     <Item>
@@ -169,7 +169,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat4.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat4.xnb</Output>
       <Time>2014-08-22T20:20:29.8093809+08:00</Time>
     </Item>
     <Item>
@@ -178,7 +178,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat5.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Battery\bat5.xnb</Output>
       <Time>2014-08-22T20:20:29.8033748+08:00</Time>
     </Item>
     <Item>
@@ -187,7 +187,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\idle3.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Sprites\idle3.xnb</Output>
       <Time>2014-08-22T20:36:35.8638863+08:00</Time>
     </Item>
     <Item>
@@ -196,8 +196,36 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background1_0.xnb</Output>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\Backgrounds\Background1_0.xnb</Output>
       <Time>2014-08-22T21:23:06.4707348+08:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\MainMenu.mp3</Source>
+      <Name>sounds\MainMenu</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\sounds\MainMenu.xnb</Output>
+      <Extra>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\sounds\MainMenu.wma</Extra>
+      <Time>2014-08-22T22:00:40.9034346+08:00</Time>
+    </Item>
+    <Item>
+      <Source>flags\flag1.png</Source>
+      <Name>flags\flag1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\flags\flag1.xnb</Output>
+      <Time>2014-08-22T23:07:57.9375092+08:00</Time>
+    </Item>
+    <Item>
+      <Source>flags\flag2.png</Source>
+      <Name>flags\flag2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\flags\flag2.xnb</Output>
+      <Time>2014-08-22T23:07:58.6084858+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -206,10 +234,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

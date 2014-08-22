@@ -18,6 +18,7 @@ namespace selfiekiller_beta
         public Animation attackAnimation;
         public Animation idleAnimation;
         public Animation avoidAnimation;
+        public Animation currentAnimation;
         public string mCurrentState;
 
         public bool timerEnabled = false;
@@ -41,20 +42,19 @@ namespace selfiekiller_beta
         Vector2 position;
 
         //collision
+        public Color spriteColor;
         public Rectangle localRect;
-
         public Rectangle BoundingRect
         {
             get
             {
-                int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + (int)idleAnimation.Texture.Bounds.Y;
+                int top = (int)Math.Round(Position.Y - sprite.Origin.Y) + (int)currentAnimation.Texture.Bounds.Y;
                 int left = (int)Math.Round(Position.X - sprite.Origin.X) + (int)sprite.Origin.X;
                 return new Rectangle(left, top,
                     localRect.Width,
                     localRect.Height);
             }
         }
-
 
         ScreenManager screenManager;
         ContentManager content;
@@ -65,9 +65,8 @@ namespace selfiekiller_beta
             this.content = content;
             IsIdle = true;
             LoadContent();
-
+            spriteColor = Color.White;
             sprite = new AnimationPlayer();
-
             Reset(position);
         }
 
@@ -77,29 +76,33 @@ namespace selfiekiller_beta
             idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle3"), 0.1f, true);
             avoidAnimation = new Animation(content.Load<Texture2D>("Sprites/Avoid"), 0.1f, false);
 
-            /*localRect = new Rectangle(runAnimation.Texture.Bounds.X,
-            runAnimation.Texture.Bounds.Y,
-            runAnimation.FrameWidth,
-            runAnimation.FrameHeight);*/
+            /*localRect = new Rectangle(currentAnimation.Texture.Bounds.X,
+            currentAnimation.Texture.Bounds.Y,
+            currentAnimation.FrameWidth,
+            currentAnimation.FrameHeight);*/
         }
 
         public void Reset(Vector2 position)
         {
             Position = position;
-            sprite.PlayAnimation(idleAnimation);
+            //sprite.PlayAnimation(idleAnimation);
+            currentAnimation = idleAnimation;
+            sprite.PlayAnimation(currentAnimation);
         }
 
         public void Update(GameTime gameTime)
         {
-            PlayerKeysDown(gameTime);    
+            if (currentAnimation == idleAnimation) { sprite.PlayAnimation(idleAnimation); }
+            if (currentAnimation == attackAnimation) { sprite.PlayAnimation(attackAnimation); }
+            if (currentAnimation == avoidAnimation) { sprite.PlayAnimation(avoidAnimation); }
+
+            PlayerKeysDown(gameTime);
+            HandleCollision();
         }
 
         public void PlayerKeysDown(GameTime gameTime)
         {
             presentKey = Keyboard.GetState();
-
-            
-
             if (presentKey.IsKeyDown(Keys.D) && pastKey.IsKeyUp(Keys.D))
             {
                 mCurrentState = "Destroying";
@@ -114,13 +117,13 @@ namespace selfiekiller_beta
             switch (mCurrentState) 
             { 
                 case "Walking":
-                    sprite.PlayAnimation(idleAnimation);
+                    currentAnimation = idleAnimation;
                     break;
                 case "Destroying":
                     isDestroy = true;
                     if (isDestroy)
                     {
-                        sprite.PlayAnimation(attackAnimation);
+                        currentAnimation = attackAnimation;
                         Trace.WriteLine("Destroy");
                        mCurrentState = "Walking";
                     }
@@ -129,7 +132,7 @@ namespace selfiekiller_beta
                     isAvoid = true;
                     if (isAvoid)
                     {
-                        sprite.PlayAnimation(avoidAnimation);
+                        currentAnimation = avoidAnimation;
                         Trace.WriteLine("Avoid");
                         mCurrentState = "Walking";
                     }
@@ -137,13 +140,16 @@ namespace selfiekiller_beta
             }
 
             pastKey = presentKey;
+             
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            sprite.Draw(gameTime, spriteBatch, Position, SpriteEffects.None, Color.White);
+            sprite.Draw(gameTime, spriteBatch, Position, SpriteEffects.None, spriteColor);
         }
 
+        public void HandleCollision()
+        {}
 
     }
 }
