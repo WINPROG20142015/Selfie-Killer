@@ -125,7 +125,7 @@ namespace selfiekiller_beta
                     {
                         currentAnimation = attackAnimation;
                         Trace.WriteLine("Destroy");
-                       mCurrentState = "Walking";
+                       //mCurrentState = "Walking";
                     }
                     break;
                 case "Avoiding":
@@ -134,7 +134,7 @@ namespace selfiekiller_beta
                     {
                         currentAnimation = avoidAnimation;
                         Trace.WriteLine("Avoid");
-                        mCurrentState = "Walking";
+                        //mCurrentState = "Walking";
                     }
                     break;
             }

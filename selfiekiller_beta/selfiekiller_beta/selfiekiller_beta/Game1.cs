@@ -34,7 +34,7 @@ namespace selfiekiller_beta
         protected override void Initialize()
         {
            
-            screenManager.AddScreen(new SplashScreen(graphics));
+            screenManager.AddScreen(new GameplayScreen(Content));
 
             base.Initialize();
         }

@@ -25,7 +25,7 @@ namespace selfiekiller_beta
         }
 
         //new code to
-        public void Update(GraphicsDevice graphics)
+        public void Update()
         {
             position += velocity;
             if (position.X < 0 - texture.Width)

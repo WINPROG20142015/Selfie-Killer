@@ -12,7 +12,7 @@ namespace selfiekiller_beta
 {
     public class GameplayScreen : GameScreen
     {
-        GraphicsDevice graphics;
+        //GraphicsDevice graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
         Background[] backgrounds;
@@ -51,7 +51,7 @@ namespace selfiekiller_beta
         //timer
         int counter = 1;
         int limit = 1;
-        float countDuration = .01f; //every  2s.
+        float countDuration = .001f; //every  2s.
         float currentTime = 0f;
 
 
@@ -108,7 +108,7 @@ namespace selfiekiller_beta
             //enemies
             spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
             foreach (Enemies enemy in enemies)
-                enemy.Update(graphics);
+                enemy.Update();
             LoadEnemies();
 
             //timeline
@@ -125,7 +125,7 @@ namespace selfiekiller_beta
                 }
                 if (timeLinedec >= 250)
                 {
-                    flagRect.X -= 5;
+                    flagRect.X -= 1;
                 }
                 s_onePlayerHealth = 4;
                 
@@ -146,17 +146,21 @@ namespace selfiekiller_beta
             {
                 player.spriteColor = Color.Blue;
                 Trace.WriteLine("Intersecting");
-
-            }
-            else if (TempRect.Intersects(enRect))
-            {
-                player.spriteColor = Color.Red;
-                Trace.WriteLine("Intersecting");
+                ScreenManager.AddScreen(new WinScreen(content));
             }
             else
             {
                 player.spriteColor = Color.White;
             }
+
+             foreach(Enemies enemy in enemies)
+            {
+                 if(TempRect.Intersects(enRect)){
+                player.spriteColor = Color.Red;
+                Trace.WriteLine("Intersecting");
+                 }
+            }
+           
         }
 
         
