@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System.Diagnostics;
+using Microsoft.Xna.Framework.Input;
 
 
 namespace selfiekiller_beta
@@ -18,6 +19,11 @@ namespace selfiekiller_beta
         Background[] backgrounds;
 
         Player player;
+        Texture2D playerHitSprite;
+        Rectangle playerAtRect;
+        bool isAttacking;
+        bool isPlayerHit = false;
+        int hitLimit = 1;
 
         //Timeline
         Texture2D timeLineTexture;
@@ -27,7 +33,7 @@ namespace selfiekiller_beta
         int timeLinedec;
 
         //Health
-        int s_onePlayerHealth;
+        int s_onePlayerHealth =4;
         Texture2D[] arrayHealth = new Texture2D[5];
 
         //collision
@@ -37,16 +43,17 @@ namespace selfiekiller_beta
 
         float cameraPosition = 0;
 
-        //enemies
+        //oldenemies
         List<Enemies> enemies = new List<Enemies>();
-        Random random = new Random();
+        //Random random = new Random();
         Rectangle enRect;
-
 
         //flags
         Texture2D clearFlag;
         Rectangle flagRect;
         Rectangle TempRect;
+        bool isFlagHit;
+        bool gameEnd;
 
         //timer
         int counter = 1;
@@ -54,9 +61,13 @@ namespace selfiekiller_beta
         float countDuration = .001f; //every  2s.
         float currentTime = 0f;
 
+        //charinput
+        KeyboardState presentKey;
+        KeyboardState pastKey;
 
         public GameplayScreen(ContentManager content)
         {
+            isFlagHit = false;
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
             this.content = content;
@@ -72,6 +83,8 @@ namespace selfiekiller_beta
             backgrounds[2] = new Background(content, "Backgrounds/Background2", 0.8f);
             //player
             player = new Player(new Vector2(180.0f, 500.0f), ScreenManager, content);
+            playerHitSprite = content.Load<Texture2D>("hitrect");
+            playerAtRect = new Rectangle(190, 240, 50, 250);
 
             //timeline
             timeLineTexture = content.Load<Texture2D>("floor");
@@ -88,30 +101,41 @@ namespace selfiekiller_beta
             clearFlag = content.Load<Texture2D>("flags/flag1");
             flagRect = new Rectangle(1000, 240,clearFlag.Width,clearFlag.Height);
             TempRect = new Rectangle(10, 240, 100, 100);
+
+            //enemyrect
+            enRect = new Rectangle(1100, 320,100, 100);
+            
         }
 
         public override void UnloadContent()
         {
             content.Unload();
         }
-
+      
         float spawn = 0;
         public override void Update(GameTime gameTime, bool covered)
         {
-            cameraPosition += 1;
+            if (gameEnd == false)
+            {
+                //Trace.WriteLine(enRect);
+                //Trace.Write(isPlayerHit);
+                cameraPosition += 1;
 
-            time += gameTime.ElapsedGameTime;
-            player.Update(gameTime);
+                time += gameTime.ElapsedGameTime;
+                player.Update(gameTime);
 
-            currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            //enemies
-            spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            foreach (Enemies enemy in enemies)
-                enemy.Update();
-            LoadEnemies();
+                //enemies
+                spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                foreach (Enemies enemy in enemies)
+                {
+                    enRect.X -= 15;
+                    enemy.Update();
+                }
+                LoadEnemies();
 
-            //timeline
+                //timeline
                 if (currentTime >= countDuration)
                 {
                     counter++;
@@ -121,31 +145,53 @@ namespace selfiekiller_beta
                 {
                     counter = 0;
                     timeLinedec += 2;
-                    //s_onePlayerHealth++;
                 }
                 if (timeLinedec >= 250)
                 {
-                    flagRect.X -= 1;
+                    //if (isFlagHit == false)
+                    //{ flagRect.X -= 1; }
                 }
-                s_onePlayerHealth = 4;
-                
-            
-            //timeline
-            timeLineRectangle = new Rectangle(505, 15, timeLinedec, 20);
 
-            //collision
-            HandleCollision();
+                if (s_onePlayerHealth == 0)
+                { ScreenManager.AddScreen(new LoseScreen(content)); gameEnd = true; }
 
-            LoadEnemies();
-            base.Update(gameTime, false);
-
+                //timeline
+                timeLineRectangle = new Rectangle(505, 15, timeLinedec, 20);
+                //collision
+                HandleCollision();
+                createAttackCol();
+                base.Update(gameTime, false);
+            }
         }
+
+        public void createAttackCol()
+        {
+            if (isAttacking == true)
+            {
+                playerAtRect = new Rectangle(190, 240, 50, 250);
+            }
+            else
+            {
+                playerAtRect = new Rectangle(0, 0, 0, 0);
+            }
+
+            presentKey = Keyboard.GetState();
+            if (presentKey.IsKeyDown(Keys.D) && pastKey.IsKeyUp(Keys.D) && isAttacking == false)
+            {
+                isAttacking = true;
+                Trace.Write("PRESSED D");
+            }         
+            pastKey = presentKey;
+        }
+
         public void HandleCollision()
         {
-            if (TempRect.Intersects(flagRect))
+            if (TempRect.Intersects(flagRect) && isFlagHit == false)
             {
                 player.spriteColor = Color.Blue;
+                isFlagHit = true;
                 Trace.WriteLine("Intersecting");
+                gameEnd = true;
                 ScreenManager.AddScreen(new WinScreen(content));
             }
             else
@@ -153,13 +199,26 @@ namespace selfiekiller_beta
                 player.spriteColor = Color.White;
             }
 
-             foreach(Enemies enemy in enemies)
-            {
-                 if(TempRect.Intersects(enRect)){
-                player.spriteColor = Color.Red;
-                Trace.WriteLine("Intersecting");
-                 }
-            }
+                if (TempRect.Intersects(enRect) && isPlayerHit == false)
+                {
+                    isPlayerHit = true;
+                    s_onePlayerHealth --;
+                    player.spriteColor = Color.Red;
+                    Trace.WriteLine("Intersecting");
+                }
+
+                if (playerAtRect.Intersects(enRect) && isPlayerHit == false)
+                {
+                    for (int i = 0; i < enemies.Count; i++)
+                        {
+                            isPlayerHit = false;
+                            enRect = new Rectangle(1100, 240, 100, 100);
+                            enemies.RemoveAt(i);
+                            i--; 
+                        }  
+                    Trace.WriteLine("Enemy HIT! OMG");
+                }
+            
            
         }
 
@@ -171,16 +230,20 @@ namespace selfiekiller_beta
                 spawn = 0;
                 if (enemies.Count() < 1)
                 {
-                    enemies.Add(new Enemies(content.Load<Texture2D>("jeje"), new Vector2(1100f, 360f),enRect));
+                    enemies.Add(new Enemies(content.Load<Texture2D>("jeje"), new Vector2(1100,350)));
                 }
             }
 
             for (int i = 0; i < enemies.Count; i++)
                 if (!enemies[i].isVisible)
                 {
+
+                    isPlayerHit = false;
+                    enRect = new Rectangle(1100, 240, 100, 100);
                     enemies.RemoveAt(i);
                     i--;
-                }
+                   
+                }            
         }
 
         public override void Draw(GameTime gameTime)
@@ -197,10 +260,14 @@ namespace selfiekiller_beta
                 backgrounds[i].Draw(spriteBatch, cameraPosition);
 
             }
-            //enemysprite
-            spriteBatch.Draw(clearFlag, flagRect, Color.White);
+            if (isFlagHit == false)
+            { spriteBatch.Draw(clearFlag, flagRect, Color.White); }
+            if (isAttacking == true)
+            { spriteBatch.Draw(playerHitSprite, playerAtRect, Color.White); }
+            //oldenemies
             foreach (Enemies enemy in enemies)
                 enemy.Draw(spriteBatch);
+
             //player
             player.Draw(gameTime, spriteBatch);
             spriteBatch.Draw(timeLineTexture,timeLineRectangle,Color.White);

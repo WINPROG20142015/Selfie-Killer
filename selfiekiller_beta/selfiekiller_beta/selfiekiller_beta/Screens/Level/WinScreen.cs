@@ -13,7 +13,6 @@ namespace selfiekiller_beta
 {
     public class WinScreen : GameScreen
     {
-        GraphicsDeviceManager graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
         Texture2D winBG;
@@ -56,8 +55,6 @@ namespace selfiekiller_beta
         {
             // starting x and y locations to stack buttons 
             // vertically in the middle of the screen
-            int x = 100;
-            int y = 100;
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
                 button_state[i] = BState.UP;
