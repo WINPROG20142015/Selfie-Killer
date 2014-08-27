@@ -12,7 +12,7 @@ namespace selfiekiller_beta
     {
         public Texture2D texture;
         public Vector2 position;
-        public Vector2 velocity = new Vector2(-15, 0);
+        public Vector2 velocity = new Vector2(-10, 0);
 
         public bool isVisible = true;
 

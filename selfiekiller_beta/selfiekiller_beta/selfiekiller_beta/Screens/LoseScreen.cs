@@ -11,7 +11,7 @@ namespace selfiekiller_beta
 {
     public class LoseScreen : GameScreen
     {
-        GraphicsDeviceManager graphics;
+       // GraphicsDeviceManager graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
 
@@ -175,7 +175,7 @@ namespace selfiekiller_beta
             switch (i)
             {
                 case MAINMENU_BUTTON_INDEX:
-                    ScreenManager.AddScreen(new MainMenuScreen(content,graphics));
+                    //ScreenManager.AddScreen(new MainMenuScreen(content,graphics));
                     break;
                 case RETRY_BUTTON_INDEX:
                     ScreenManager.AddScreen(new GameplayScreen(content));

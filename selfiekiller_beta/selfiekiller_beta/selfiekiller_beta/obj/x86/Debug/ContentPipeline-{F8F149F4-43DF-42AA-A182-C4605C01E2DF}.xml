@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\jeje.xnb</Output>
-      <Time>2014-08-22T13:30:54.9610695+08:00</Time>
+      <Time>2014-08-28T02:13:07.2438642+08:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Attack.png</Source>
@@ -307,6 +307,15 @@
       <Options>None</Options>
       <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\hitrect.xnb</Output>
       <Time>2014-08-28T01:05:53.7571234+08:00</Time>
+    </Item>
+    <Item>
+      <Source>jejehit.png</Source>
+      <Name>jejehit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\jejehit.xnb</Output>
+      <Time>2014-08-28T02:13:05.5739533+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

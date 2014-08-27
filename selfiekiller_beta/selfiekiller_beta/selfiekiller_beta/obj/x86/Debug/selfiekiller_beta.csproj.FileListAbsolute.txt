@@ -217,3 +217,4 @@ C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_be
 C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\retry.xnb
 C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\retryblue.xnb
 C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\hitrect.xnb
+C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_beta\bin\x86\Debug\Content\jejehit.xnb

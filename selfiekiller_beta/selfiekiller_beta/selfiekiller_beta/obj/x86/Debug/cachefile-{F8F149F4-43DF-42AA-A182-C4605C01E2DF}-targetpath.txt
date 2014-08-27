@@ -33,3 +33,4 @@ Content\retryblue.xnb
 Content\sounds\MainMenu.xnb
 Content\sounds\MainMenu.wma
 Content\hitrect.xnb
+Content\jejehit.xnb
