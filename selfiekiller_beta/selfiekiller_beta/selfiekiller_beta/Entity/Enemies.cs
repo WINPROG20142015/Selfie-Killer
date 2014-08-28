@@ -12,30 +12,37 @@ namespace selfiekiller_beta
     {
         public Texture2D texture;
         public Vector2 position;
-        public Vector2 velocity = new Vector2(-10, 0);
+        public Vector2 velocity = new Vector2(-4, 0);
 
+        public Rectangle enemyRect;
         public bool isVisible = true;
 
-        public Enemies(Texture2D newTexture, Vector2 newPosition)
+        public Enemies(Texture2D newTexture, Vector2 newPosition, Rectangle newRect)
         {
             texture = newTexture;
             position = newPosition;
+            enemyRect = newRect;
         }
+
+        //new code to
         public void Update()
         {
             position += velocity;
-            
             if (position.X < 0 - texture.Width)
+
                 isVisible = false;
         }
+        //new code to
+
         public void Load()
         { 
-
+            enemyRect = new Rectangle((int)position.X,(int)position.Y,texture.Width,texture.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, Color.White);
+
         }
     }
 }

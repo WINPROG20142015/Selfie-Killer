@@ -75,8 +75,11 @@
     <Compile Include="Animation\Animation.cs" />
     <Compile Include="Animation\AnimationPlayer.cs" />
     <Compile Include="Entity\Enemies.cs" />
+    <Compile Include="Entity\Neutral.cs" />
     <Compile Include="Entity\Player.cs" />
     <Compile Include="InputSystem.cs" />
+    <Compile Include="Screens\GameplayScreen2.cs" />
+    <Compile Include="Screens\GameplayScreen3.cs" />
     <Compile Include="Screens\Level\Background.cs" />
     <Compile Include="Screens\Level\Timeline.cs" />
     <Compile Include="MenuEntry.cs" />

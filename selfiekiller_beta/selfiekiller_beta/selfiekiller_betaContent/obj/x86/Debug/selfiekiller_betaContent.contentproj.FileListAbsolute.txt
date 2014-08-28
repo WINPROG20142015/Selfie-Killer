@@ -4,4 +4,3 @@ C:\Users\Rhem\Desktop\WinXna\UnfinishedPlay\Karl\selfiekiller_beta\selfiekiller_
 C:\Users\Rhem\Desktop\WinXna\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
 C:\Users\karl\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
 C:\Users\karl\Desktop\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
-C:\Users\Rhem\Documents\Selfie-Killer\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache

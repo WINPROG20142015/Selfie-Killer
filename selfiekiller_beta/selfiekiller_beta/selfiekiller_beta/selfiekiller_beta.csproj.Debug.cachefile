@@ -22,6 +22,7 @@ Content\Sprites\idle3.xnb
 Content\Backgrounds\Background1_0.xnb
 Content\flags\flag1.xnb
 Content\flags\flag2.xnb
+Content\sounds\MainMenu.xnb
 Content\WinBg.xnb
 Content\LoseBg.xnb
 Content\continue.xnb
@@ -30,7 +31,9 @@ Content\playagain.xnb
 Content\MainMenu.xnb
 Content\retry.xnb
 Content\retryblue.xnb
-Content\hitrect.xnb
-Content\jejehit.xnb
-Content\sounds\MainMenu.xnb
+Content\loli.xnb
+Content\Backgrounds\Background3_0.xnb
+Content\duck.xnb
+Content\tripod.xnb
+Content\Backgrounds\Background4_0.xnb
 Content\sounds\MainMenu.wma

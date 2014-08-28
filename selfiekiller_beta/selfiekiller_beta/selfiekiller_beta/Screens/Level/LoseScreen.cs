@@ -11,9 +11,10 @@ namespace selfiekiller_beta
 {
     public class LoseScreen : GameScreen
     {
-       // GraphicsDeviceManager graphics;
+        GraphicsDeviceManager graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
+
 
         enum BState
         {
@@ -23,10 +24,11 @@ namespace selfiekiller_beta
             DOWN
         }
         const int NUMBER_OF_BUTTONS = 2,
-            MAINMENU_BUTTON_INDEX = 0,
-            RETRY_BUTTON_INDEX = 1,
-            BUTTON_HEIGHT = 50,
-            BUTTON_WIDTH = 150;
+            EASY_BUTTON_INDEX = 0,
+            MEDIUM_BUTTON_INDEX = 1,
+            HARD_BUTTON_INDEX = 2,
+            BUTTON_HEIGHT = 40,
+            BUTTON_WIDTH = 88;
         Color background_color;
         Color[] button_color = new Color[NUMBER_OF_BUTTONS];
         Rectangle[] button_rectangle = new Rectangle[NUMBER_OF_BUTTONS];
@@ -48,14 +50,15 @@ namespace selfiekiller_beta
         {
             // starting x and y locations to stack buttons 
             // vertically in the middle of the screen
-
+            int x = 100;
+            int y = 100;
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
                 button_state[i] = BState.UP;
                 button_color[i] = Color.White;
                 button_timer[i] = 0.0;
-                button_rectangle[MAINMENU_BUTTON_INDEX] = new Rectangle(235, 425, BUTTON_WIDTH, BUTTON_HEIGHT);
-                button_rectangle[RETRY_BUTTON_INDEX] = new Rectangle(425, 425, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[EASY_BUTTON_INDEX] = new Rectangle(260, 429, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[MEDIUM_BUTTON_INDEX] = new Rectangle(450, 429, BUTTON_WIDTH, BUTTON_HEIGHT);
 
             }
 
@@ -69,9 +72,9 @@ namespace selfiekiller_beta
             spriteBatch = ScreenManager.SpriteBatch;
             loseBG = content.Load<Texture2D>("LoseBg");
 
-            button_texture[MAINMENU_BUTTON_INDEX] =
+            button_texture[EASY_BUTTON_INDEX] =
                 content.Load<Texture2D>("MainManu2");
-            button_texture[RETRY_BUTTON_INDEX] =
+            button_texture[MEDIUM_BUTTON_INDEX] =
                 content.Load<Texture2D>("retry");
 
         }
@@ -174,11 +177,14 @@ namespace selfiekiller_beta
             //take action corresponding to which button was clicked
             switch (i)
             {
-                case MAINMENU_BUTTON_INDEX:
-                    //ScreenManager.AddScreen(new MainMenuScreen(content,graphics));
+                case EASY_BUTTON_INDEX:
+                    background_color = Color.Green;
                     break;
-                case RETRY_BUTTON_INDEX:
-                    ScreenManager.AddScreen(new GameplayScreen(content));
+                case MEDIUM_BUTTON_INDEX:
+                    background_color = Color.Yellow;
+                    break;
+                case HARD_BUTTON_INDEX:
+                    background_color = Color.Red;
                     break;
                 default:
                     break;
