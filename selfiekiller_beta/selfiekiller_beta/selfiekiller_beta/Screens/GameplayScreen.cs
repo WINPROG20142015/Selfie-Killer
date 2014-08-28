@@ -24,6 +24,7 @@ namespace selfiekiller_beta
         Texture2D playerHitSprite;
         Rectangle playerAtRect;
         bool isAttacking;
+        bool isAvoiding;
         bool isPlayerHit = false;
     
         //Timeline
@@ -59,7 +60,7 @@ namespace selfiekiller_beta
         //timer
         int counter = 1;
         int limit = 1;
-        float countDuration = .001f; //every  2s.
+        float countDuration = .01f; //every  2s.
         float currentTime = 0f;
 
         //charinput
@@ -117,29 +118,19 @@ namespace selfiekiller_beta
         #region UPDATE
         public override void Update(GameTime gameTime, bool covered)
         {
+            
             if (gameEnd == false)
             {
                 cameraPosition += 1;
 
-                time += gameTime.ElapsedGameTime;
-
                 player.Update(gameTime);
 
+                time += gameTime.ElapsedGameTime;
                 currentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-                //enemies
-                spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                foreach (Enemies enemy in jejemon)
-                {
-                    enRect.X -= 10;
-                    enemy.Update();
-                }
-                LoadEnemies();
 
                 //timeline
                 if (currentTime >= countDuration)
                 {
-                    
                     counter++;
                     currentTime -= countDuration;
                 }
@@ -150,15 +141,29 @@ namespace selfiekiller_beta
                 }
                 if (timeLinedec >= 250)
                 {
-                    //if (isFlagHit == false)
-                    //{ flagRect.X -= 1; }
+                    if (isFlagHit == false)
+                    { flagRect.X -= 10; }
                 }
 
+                //enemies
+                spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                foreach (Enemies enemy in jejemon)
+                {
+                    enRect.X -= 10;
+                    enemy.Update();
+                }
+                if (timeLinedec <= 250)
+                {
+                    LoadEnemies();
+                }
+
+                //LoseScreen
                 if (s_onePlayerHealth == 0)
                 { ScreenManager.AddScreen(new LoseScreen(content)); gameEnd = true; }
 
                 //timeline
                 timeLineRectangle = new Rectangle(505, 15, timeLinedec, 20);
+
                 //collision
                 HandleCollision();
                 createAttackCol();
@@ -166,40 +171,45 @@ namespace selfiekiller_beta
             }
         }
         #endregion
-        #region ATTACK COLLISION
+        #region INPUT CHECK
         public void createAttackCol()
         {
             KeyboardState presentKey = Keyboard.GetState();
-
-            // Is the SPACE key down?
+            //ATTACKING INPUT-----------------------------------------------------
             if (presentKey.IsKeyDown(Keys.D) && pastKey.IsKeyUp(Keys.D))
             {
                 isAttacking = true;
                 playerAtRect = new Rectangle(150, 240, 50, 250);
-                Trace.Write("PRESSED D");
-
-                if (!pastKey.IsKeyDown(Keys.D)) // If not down last update, key has just been pressed.
-                {
-                    pastKey = presentKey;
-                }
             }
             else if (pastKey.IsKeyDown(Keys.D))
             {
                 isAttacking = false;
                 playerAtRect = new Rectangle(0, 0, 0, 0);
             }
-            
+            //AVOIDING INPUT---------------------------------------------------------
+            if (presentKey.IsKeyDown(Keys.A) && isAvoiding == false)
+            {
+                isAvoiding = true;
+                TempRect = new Rectangle(0, 0, 0, 0);
+            }
+            else if (pastKey.IsKeyDown(Keys.A))
+            {
+                isAvoiding = false;
+                TempRect = new Rectangle(10, 240, 100, 100);
+            }
+            //Present > Past
             pastKey = presentKey;
         }
         #endregion
         #region HANDLE COLLISION
         public void HandleCollision()
         {
+            //Player Rect Touching FlagRect (WINSCREEN)
             if (TempRect.Intersects(flagRect) && isFlagHit == false)
             {
                 player.spriteColor = Color.Blue;
                 isFlagHit = true;
-                Trace.WriteLine("Intersecting");
+                Trace.WriteLine("Touched Flag");
                 gameEnd = true;
                 ScreenManager.AddScreen(new WinScreen(content));
             }
@@ -207,26 +217,26 @@ namespace selfiekiller_beta
             {
                 player.spriteColor = Color.White;
             }
-
-                if (TempRect.Intersects(enRect) && isPlayerHit == false)
-                {
-                    isPlayerHit = true;
-                    s_onePlayerHealth --;
-                    player.spriteColor = Color.Red;
-                    Trace.WriteLine("Intersecting");
-                }
-
-                if (playerAtRect.Intersects(enRect) && isPlayerHit == false)
-                {
-                    for (int i = 0; i < jejemon.Count; i++)
-                        {
-                            isPlayerHit = false;
-                            enRect = new Rectangle(1100, 240, 100, 100);
-                            jejemon.RemoveAt(i);
-                            i--; 
-                        }  
-                    Trace.WriteLine("Enemy HIT! OMG");
-                }
+            //Player Rect Touching an Enemy Rect
+            if (TempRect.Intersects(enRect) && isPlayerHit == false && isAvoiding == false)
+            {
+                isPlayerHit = true;
+                s_onePlayerHealth --;
+                player.spriteColor = Color.Red;
+                Trace.WriteLine("Health: " + s_onePlayerHealth);
+            }
+            //Player's Attack Rect Touching and Enemy
+            if (playerAtRect.Intersects(enRect) && isPlayerHit == false)
+            {
+                for (int i = 0; i < jejemon.Count; i++)
+                    {
+                        isPlayerHit = false;
+                        enRect = new Rectangle(1100, 240, 100, 100);
+                        jejemon.RemoveAt(i);
+                        i--; 
+                    }  
+                Trace.WriteLine("Enemy is hit!");
+            }
         }
         #endregion
         #region LOAD ENEMIES

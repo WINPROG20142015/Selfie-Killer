@@ -72,26 +72,33 @@ namespace selfiekiller_beta
 
         public void LoadContent()
         {
-            attackAnimation = new Animation(content.Load<Texture2D>("Sprites/Attack"), 0.1f, false);
+            attackAnimation = new Animation(content.Load<Texture2D>("Sprites/Attack"), 0.01f, false);
             idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle3"), 0.1f, true);
             avoidAnimation = new Animation(content.Load<Texture2D>("Sprites/Avoid"), 0.1f, false);
-
-            /*localRect = new Rectangle(currentAnimation.Texture.Bounds.X,
-            currentAnimation.Texture.Bounds.Y,
-            currentAnimation.FrameWidth,
-            currentAnimation.FrameHeight);*/
         }
 
         public void Reset(Vector2 position)
         {
             Position = position;
-            //sprite.PlayAnimation(idleAnimation);
             currentAnimation = idleAnimation;
             sprite.PlayAnimation(currentAnimation);
         }
 
         public void Update(GameTime gameTime)
         {
+            timerpress = true;
+            // clock start and update  
+            if (clockIsRunning == false)
+            {
+                //count 10 seconds down 
+                start(2);
+                mCurrentState = "Walking";
+            }
+            else
+            {
+                checkTime(gameTime);
+            }
+
             if (currentAnimation == idleAnimation) { sprite.PlayAnimation(idleAnimation); }
             if (currentAnimation == attackAnimation) { sprite.PlayAnimation(attackAnimation); }
             if (currentAnimation == avoidAnimation) { sprite.PlayAnimation(avoidAnimation); }
@@ -99,18 +106,18 @@ namespace selfiekiller_beta
             PlayerKeysDown(gameTime);
             HandleCollision();
         }
-
+        bool timerpress=false;
         public void PlayerKeysDown(GameTime gameTime)
         {
             presentKey = Keyboard.GetState();
+
             if (presentKey.IsKeyDown(Keys.D) && pastKey.IsKeyUp(Keys.D))
             {
-                mCurrentState = "Destroying";
+                mCurrentState = "Destroying"; 
             }
-
             if (presentKey.IsKeyDown(Keys.A) && pastKey.IsKeyUp(Keys.A))
             {
-                mCurrentState = "Avoiding"; 
+                mCurrentState = "Avoiding";
             }
             //-----------------------------------------------------------------------
 
@@ -124,8 +131,7 @@ namespace selfiekiller_beta
                     if (isDestroy)
                     {
                         currentAnimation = attackAnimation;
-                        Trace.WriteLine("Destroy");
-                       mCurrentState = "Walking";
+                        //Trace.WriteLine("Destroy");
                     }
                     break;
                 case "Avoiding":
@@ -133,14 +139,10 @@ namespace selfiekiller_beta
                     if (isAvoid)
                     {
                         currentAnimation = avoidAnimation;
-                        Trace.WriteLine("Avoid");
-                        mCurrentState = "Walking";
+                        //Trace.WriteLine("Avoid");
                     }
                     break;
             }
-
-            pastKey = presentKey;
-             
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -151,5 +153,65 @@ namespace selfiekiller_beta
         public void HandleCollision()
         {}
 
+        #region TIMER
+        //-------------------------TIMER------------------------------------------------------------
+        private int endTimer; 
+        private int countTimerRef;
+        public bool clockIsRunning;
+        public bool clockIsFinished;
+         
+ 
+        public void ClockTimer() 
+        { 
+ 
+            endTimer = 0; 
+            countTimerRef = 0;
+            clockIsRunning = false;
+            clockIsFinished = false; 
+ 
+        } 
+        public void start(int seconds) 
+        { 
+            endTimer = seconds;
+            clockIsRunning = true; 
+        } 
+ 
+        public Boolean checkTime(GameTime gameTime) 
+        { 
+            
+            if (!clockIsFinished) 
+            {
+
+                if (timerpress == true)
+                { countTimerRef += (int)gameTime.ElapsedGameTime.TotalMilliseconds; }
+
+                if (countTimerRef >= 300.0f) 
+                { 
+                    endTimer = endTimer - 1; 
+                    countTimerRef = 0; 
+                    if (endTimer <= 0) 
+                    { 
+                        endTimer = 0;
+                        clockIsFinished = true; 
+                    } 
+                }
+                
+            } 
+            else 
+            {
+                pastKey = presentKey;
+                mCurrentState = "Walking";
+                reset();
+            }
+            return clockIsFinished; 
+        } 
+        public void reset() 
+        {
+            clockIsRunning = false;
+            clockIsFinished = false; 
+            countTimerRef = 0; 
+            endTimer = 0;
+        }
+        #endregion
     }
 }

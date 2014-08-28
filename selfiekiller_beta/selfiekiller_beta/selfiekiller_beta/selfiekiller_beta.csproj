@@ -89,7 +89,7 @@
     <Compile Include="Screens\GameplayScreen.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\Level\WinScreen.cs" />
-    <Compile Include="Screens\LoseScreen.cs" />
+    <Compile Include="Screens\Level\LoseScreen.cs" />
     <Compile Include="Screens\MainMenuScreen.cs" />
     <Compile Include="Screens\SplashScreen.cs" />
   </ItemGroup>

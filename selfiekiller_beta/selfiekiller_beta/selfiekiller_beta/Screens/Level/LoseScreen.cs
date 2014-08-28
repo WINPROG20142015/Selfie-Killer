@@ -4,21 +4,17 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using selfiekiller_beta;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-//using System.Windows.forms;
 
 namespace selfiekiller_beta
 {
-    public class WinScreen : GameScreen
+    public class LoseScreen : GameScreen
     {
+       // GraphicsDeviceManager graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
-        Texture2D winBG;
 
-        #region Buttonvars
-        // Global variables
         enum BState
         {
             HOVER,
@@ -26,10 +22,9 @@ namespace selfiekiller_beta
             JUST_RELEASED,
             DOWN
         }
-        const int NUMBER_OF_BUTTONS = 3,
-            Menu_BUTTON_INDEX = 0,
-            Retry_BUTTON_INDEX = 1,
-            Continue_BUTTON_INDEX = 2,
+        const int NUMBER_OF_BUTTONS = 2,
+            MAINMENU_BUTTON_INDEX = 0,
+            RETRY_BUTTON_INDEX = 1,
             BUTTON_HEIGHT = 50,
             BUTTON_WIDTH = 150;
         Color background_color;
@@ -43,42 +38,42 @@ namespace selfiekiller_beta
         //mouse location in window
         int mx, my;
         double frame_time;
-        #endregion 
 
-        public WinScreen(ContentManager content)
+        public LoseScreen(ContentManager content)
         {
             this.content = content;
         }
-        
 
         public override void Initialize()
         {
             // starting x and y locations to stack buttons 
             // vertically in the middle of the screen
+
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
                 button_state[i] = BState.UP;
                 button_color[i] = Color.White;
                 button_timer[i] = 0.0;
-                button_rectangle[Menu_BUTTON_INDEX] = new Rectangle(80, 398, BUTTON_WIDTH, BUTTON_HEIGHT);
-                button_rectangle[Retry_BUTTON_INDEX] = new Rectangle(329, 398, BUTTON_WIDTH, BUTTON_HEIGHT);
-                button_rectangle[Continue_BUTTON_INDEX] = new Rectangle(570, 398, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[MAINMENU_BUTTON_INDEX] = new Rectangle(235, 425, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[RETRY_BUTTON_INDEX] = new Rectangle(425, 425, BUTTON_WIDTH, BUTTON_HEIGHT);
+
             }
-            
+
             background_color = Color.CornflowerBlue;
         }
 
+
+        Texture2D loseBG;
         public override void LoadContent()
         {
             spriteBatch = ScreenManager.SpriteBatch;
-            winBG = content.Load<Texture2D>("WinBg");
+            loseBG = content.Load<Texture2D>("LoseBg");
 
-            button_texture[Menu_BUTTON_INDEX] =
-                content.Load<Texture2D>("MainMenu");
-            button_texture[Retry_BUTTON_INDEX] =
-                content.Load<Texture2D>("playagain");
-            button_texture[Continue_BUTTON_INDEX] =
-                content.Load<Texture2D>("continue");
+            button_texture[MAINMENU_BUTTON_INDEX] =
+                content.Load<Texture2D>("MainManu2");
+            button_texture[RETRY_BUTTON_INDEX] =
+                content.Load<Texture2D>("retry");
+
         }
 
         public override void UnloadContent()
@@ -179,12 +174,11 @@ namespace selfiekiller_beta
             //take action corresponding to which button was clicked
             switch (i)
             {
-                case Menu_BUTTON_INDEX:
+                case MAINMENU_BUTTON_INDEX:
+                    //ScreenManager.AddScreen(new MainMenuScreen(content,graphics));
                     break;
-                case Retry_BUTTON_INDEX:
+                case RETRY_BUTTON_INDEX:
                     ScreenManager.AddScreen(new GameplayScreen(content));
-                    break;
-                case Continue_BUTTON_INDEX:
                     break;
                 default:
                     break;
@@ -209,12 +203,16 @@ namespace selfiekiller_beta
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(winBG, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(loseBG, new Vector2(0, 0), Color.White);
             //GraphicsDevice.Clear(background_color);
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
                 spriteBatch.Draw(button_texture[i], button_rectangle[i], button_color[i]);
             spriteBatch.End();
-            
         }
+
+
     }
+
+
+
 }
