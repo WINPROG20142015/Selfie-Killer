@@ -13,7 +13,6 @@ namespace selfiekiller_beta
 {
     public class WinScreen : GameScreen
     {
-        GraphicsDeviceManager graphics;
         ContentManager content;
         SpriteBatch spriteBatch;
         Texture2D winBG;
@@ -28,11 +27,11 @@ namespace selfiekiller_beta
             DOWN
         }
         const int NUMBER_OF_BUTTONS = 3,
-            EASY_BUTTON_INDEX = 0,
-            MEDIUM_BUTTON_INDEX = 1,
-            HARD_BUTTON_INDEX = 2,
-            BUTTON_HEIGHT = 40,
-            BUTTON_WIDTH = 88;
+            Menu_BUTTON_INDEX = 0,
+            Retry_BUTTON_INDEX = 1,
+            Continue_BUTTON_INDEX = 2,
+            BUTTON_HEIGHT = 50,
+            BUTTON_WIDTH = 150;
         Color background_color;
         Color[] button_color = new Color[NUMBER_OF_BUTTONS];
         Rectangle[] button_rectangle = new Rectangle[NUMBER_OF_BUTTONS];
@@ -56,16 +55,14 @@ namespace selfiekiller_beta
         {
             // starting x and y locations to stack buttons 
             // vertically in the middle of the screen
-            int x = 100;
-            int y = 100;
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
                 button_state[i] = BState.UP;
                 button_color[i] = Color.White;
                 button_timer[i] = 0.0;
-                button_rectangle[EASY_BUTTON_INDEX] = new Rectangle(100, 400, BUTTON_WIDTH, BUTTON_HEIGHT);
-                button_rectangle[MEDIUM_BUTTON_INDEX] = new Rectangle(350, 400, BUTTON_WIDTH, BUTTON_HEIGHT);
-                button_rectangle[HARD_BUTTON_INDEX] = new Rectangle(600, 400, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[Menu_BUTTON_INDEX] = new Rectangle(80, 398, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[Retry_BUTTON_INDEX] = new Rectangle(329, 398, BUTTON_WIDTH, BUTTON_HEIGHT);
+                button_rectangle[Continue_BUTTON_INDEX] = new Rectangle(570, 398, BUTTON_WIDTH, BUTTON_HEIGHT);
             }
             
             background_color = Color.CornflowerBlue;
@@ -76,11 +73,11 @@ namespace selfiekiller_beta
             spriteBatch = ScreenManager.SpriteBatch;
             winBG = content.Load<Texture2D>("WinBg");
 
-            button_texture[EASY_BUTTON_INDEX] =
+            button_texture[Menu_BUTTON_INDEX] =
                 content.Load<Texture2D>("MainMenu");
-            button_texture[MEDIUM_BUTTON_INDEX] =
-                content.Load<Texture2D>("retryblue");
-            button_texture[HARD_BUTTON_INDEX] =
+            button_texture[Retry_BUTTON_INDEX] =
+                content.Load<Texture2D>("playagain");
+            button_texture[Continue_BUTTON_INDEX] =
                 content.Load<Texture2D>("continue");
         }
 
@@ -182,14 +179,12 @@ namespace selfiekiller_beta
             //take action corresponding to which button was clicked
             switch (i)
             {
-                case EASY_BUTTON_INDEX:
-                    ScreenManager.AddScreen(new MainMenuScreen(content,graphics));
+                case Menu_BUTTON_INDEX:
                     break;
-                case MEDIUM_BUTTON_INDEX:
+                case Retry_BUTTON_INDEX:
                     ScreenManager.AddScreen(new GameplayScreen(content));
                     break;
-                case HARD_BUTTON_INDEX:
-                    background_color = Color.Red;
+                case Continue_BUTTON_INDEX:
                     break;
                 default:
                     break;
