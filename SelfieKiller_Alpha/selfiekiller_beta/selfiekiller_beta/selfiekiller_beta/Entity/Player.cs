@@ -65,7 +65,7 @@ namespace selfiekiller_beta
         public void LoadContent()
         {
             attackAnimation = new Animation(content.Load<Texture2D>("Sprites/Attack"), 0.01f, false);
-            idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle3"), 0.1f, true);
+            idleAnimation = new Animation(content.Load<Texture2D>("Sprites/Idle"), 0.1f, true);
             avoidAnimation = new Animation(content.Load<Texture2D>("Sprites/Avoid"), 0.1f, false);
 
         }
@@ -145,7 +145,6 @@ namespace selfiekiller_beta
             }
             else if (input.Destroy)
             {
-
                 sprite.PlayAnimation(attackAnimation);
                 isIdle = false;
             }

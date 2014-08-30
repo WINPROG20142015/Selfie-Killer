@@ -22,7 +22,6 @@ namespace selfiekiller_beta
         {
             this.content = content;
             this.position = position;
-
             Load();
         }
 

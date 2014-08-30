@@ -217,10 +217,6 @@ namespace selfiekiller_beta
             Vector2 menuPosition = new Vector2(position.X, position.Y);
             spriteBatch.Begin();
 
-            if (ScreenManager.wallpaper != null)
-                spriteBatch.Draw(ScreenManager.wallpaper, new Rectangle(0, 0, 800, 600), Color.White);
-
-
             for (int i = 0; i < menuEntries.Count; i++)
             {
                 bool isSelected = (i == selectedEntry);

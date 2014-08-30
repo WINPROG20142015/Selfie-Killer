@@ -25,14 +25,13 @@ namespace selfiekiller_beta
         {
             ContentManager content = ScreenManager.Game.Content;
             this.contentManager = content;
-            Texture = content.Load<Texture2D>("splash");
-
-            Pixel = content.Load<Texture2D>("Spacer");
+            Texture = content.Load<Texture2D>("Backgrounds/UnPlay");
+            Pixel = content.Load<Texture2D>("GameAssets/Spacer");
         }
 
         public override void Remove()
         {
-            ScreenManager.AddScreen(new MainMenuScreen(contentManager, graphics));
+            ScreenManager.AddScreen(new MainMenu(contentManager));
             base.Remove();
         }
     }

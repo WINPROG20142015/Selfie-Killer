@@ -77,8 +77,6 @@ namespace selfiekiller_beta
             isInitialized = true;
         }
 
-        Texture2D texture;
-
         /// <summary>
         /// Initialize the spriteBatch and screen dedicated content.
         /// </summary>
@@ -87,17 +85,12 @@ namespace selfiekiller_beta
         {
             ContentManager content = Game.Content;
 
-            texture = content.Load<Texture2D>("menu");
+            
             spriteBatch = new SpriteBatch(GraphicsDevice);
            
             //load screen dedicated content
             foreach (GameScreen screen in screens)
                 screen.LoadContent();
-        }
-
-        public Texture2D wallpaper
-        {
-            get { return texture; }
         }
 
         /// <summary>
