@@ -1,3 +1,4 @@
 c:\users\alvin.uy\documents\visual studio 2010\Projects\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Rhem\Downloads\selfiekiller_beta_sir\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Rhem\Documents\selfiekiller_beta_sir\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache
+C:\Users\karl\Documents\Selfie-Killer\SelfieKiller_Alpha\selfiekiller_beta\selfiekiller_beta\selfiekiller_betaContent\obj\x86\Debug\selfiekiller_betaContent.contentprojResolveAssemblyReference.cache

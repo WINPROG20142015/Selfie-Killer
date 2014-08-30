@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+
 
 namespace selfiekiller_beta
 {
@@ -17,6 +21,9 @@ namespace selfiekiller_beta
         ContentManager content;
         SpriteBatch spriteBatch;
         Background[] backgrounds;
+
+        // Audio objects
+        SoundEffect sounds;
 
         //Player
         Player player;
@@ -30,6 +37,7 @@ namespace selfiekiller_beta
         Vector2 borderPos = new Vector2(500f,10f);
         int timeLinedec;
         bool gameEnd = false;
+        WinScreen winscrn;
 
         //Health
         Texture2D[] arrayHealth = new Texture2D[5];
@@ -67,6 +75,8 @@ namespace selfiekiller_beta
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
             this.content = content;
 
+            
+
         }
         #endregion
         #region LOAD AND UNLOAD CONTENT
@@ -74,6 +84,9 @@ namespace selfiekiller_beta
         {
             this.input = ScreenManager.InputSystem;
             this.spriteBatch = ScreenManager.SpriteBatch;
+
+            Song song = content.Load<Song>("sounds/Stage1");  // Put the name of your song in instead of "song_title"
+            MediaPlayer.Play(song);
 
             backgrounds = new Background[3];
             backgrounds[0] = new Background(content, "Backgrounds/Background0", 0.2f);
@@ -153,6 +166,7 @@ namespace selfiekiller_beta
                 //LoseScreen
                 if (player.life == 0)
                 {
+                    MediaPlayer.Stop();
                     ScreenManager.AddScreen(new LoseScreen(content));
                     gameEnd = true;
                 }
@@ -194,6 +208,7 @@ namespace selfiekiller_beta
             {
                 player.spriteColor = Color.Blue;
                 gameEnd = true;
+                MediaPlayer.Stop();
                 ScreenManager.AddScreen(new WinScreen(content));
             }
             else

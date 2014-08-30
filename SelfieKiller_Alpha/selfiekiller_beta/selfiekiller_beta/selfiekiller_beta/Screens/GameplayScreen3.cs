@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -64,6 +65,8 @@ namespace selfiekiller_beta
 
         public override void LoadContent()
         {
+            Song song = content.Load<Song>("sounds/Stage3");  // Put the name of your song in instead of "song_title"
+            MediaPlayer.Play(song);
 
             spriteBatch = ScreenManager.SpriteBatch;
             backgrounds = new Background[3];

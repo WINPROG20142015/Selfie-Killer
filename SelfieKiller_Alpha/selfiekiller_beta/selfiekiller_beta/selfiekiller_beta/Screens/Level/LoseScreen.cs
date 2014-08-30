@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace selfiekiller_beta
 {
@@ -66,6 +67,10 @@ namespace selfiekiller_beta
         Texture2D loseBG;
         public override void LoadContent()
         {
+
+            Song song = content.Load<Song>("sounds/Lose");  // Put the name of your song in instead of "song_title"
+            MediaPlayer.Play(song);
+
             spriteBatch = ScreenManager.SpriteBatch;
             loseBG = content.Load<Texture2D>("LoseBg");
 
@@ -175,9 +180,11 @@ namespace selfiekiller_beta
             switch (i)
             {
                 case MAINMENU_BUTTON_INDEX:
+                    MediaPlayer.Stop();
                     //ScreenManager.AddScreen(new MainMenuScreen(content,graphics));
                     break;
                 case RETRY_BUTTON_INDEX:
+                    MediaPlayer.Stop();
                     ScreenManager.AddScreen(new GameplayScreen(content));
                     break;
                 default:

@@ -55,8 +55,9 @@ namespace selfiekiller_beta
             ScreenManager.Game.Exit();
         }
 
-        void newGame_Selected(object sender, EventArgs e)
+        public void newGame_Selected(object sender, EventArgs e)
         {
+            MediaPlayer.Stop();
             ScreenManager.AddScreen(new GameplayScreen(content));
             Remove();
         }
@@ -66,8 +67,8 @@ namespace selfiekiller_beta
             ContentManager content = ScreenManager.Content;
             SpriteFont = content.Load<SpriteFont>(@"Fonts\\menuFont");
 
-            //Song song = content.Load<Song>("sounds/MainMenu");  // Put the name of your song in instead of "song_title"
-            //MediaPlayer.Play(song);
+            Song song = content.Load<Song>("sounds/MainMenu");  // Put the name of your song in instead of "song_title"
+            MediaPlayer.Play(song);
         }
 
         void MainMenuRemoved(object sender, EventArgs e)

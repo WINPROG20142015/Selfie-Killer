@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using selfiekiller_beta;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 //using System.Windows.forms;
 
 namespace selfiekiller_beta
@@ -16,6 +17,9 @@ namespace selfiekiller_beta
         ContentManager content;
         SpriteBatch spriteBatch;
         Texture2D winBG;
+
+        public int stageOn;
+        
 
         #region Buttonvars
         // Global variables
@@ -70,6 +74,9 @@ namespace selfiekiller_beta
 
         public override void LoadContent()
         {
+            Song song = content.Load<Song>("sounds/Win");  // Put the name of your song in instead of "song_title"
+            MediaPlayer.Play(song);
+
             spriteBatch = ScreenManager.SpriteBatch;
             winBG = content.Load<Texture2D>("WinBg");
 
@@ -180,11 +187,15 @@ namespace selfiekiller_beta
             switch (i)
             {
                 case Menu_BUTTON_INDEX:
+                    MediaPlayer.Stop();
                     break;
                 case Retry_BUTTON_INDEX:
+                    MediaPlayer.Stop();
                     ScreenManager.AddScreen(new GameplayScreen(content));
                     break;
                 case Continue_BUTTON_INDEX:
+                    MediaPlayer.Stop();
+                    ScreenManager.AddScreen(new GameplayScreen2(content));                                                               
                     break;
                 default:
                     break;

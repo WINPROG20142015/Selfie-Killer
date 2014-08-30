@@ -145,6 +145,7 @@ namespace selfiekiller_beta
             }
             else if (input.Destroy)
             {
+
                 sprite.PlayAnimation(attackAnimation);
                 isIdle = false;
             }
